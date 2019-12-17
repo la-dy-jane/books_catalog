@@ -32,24 +32,24 @@ class Book
      */
     private $year;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getAuthor(): ?Author
+    public function getAuthor(): Author
     {
         return $this->author;
     }
 
-    public function setAuthor(?Author $author): self
+    public function setAuthor(Author $author): self
     {
         $this->author = $author;
 
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -61,7 +61,7 @@ class Book
         return $this;
     }
 
-    public function getYear(): ?int
+    public function getYear(): int
     {
         return $this->year;
     }
