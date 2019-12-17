@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ author.name }} {{ author.surname }}{% endblock %}
+
+{% block body %}
+    <h1>{{ author.name }} {{ author.surname }}</h1>
+
+    <table class="table table-striped table-borderless">
+        <tbody>
+            {% for book in author.books|sort((a, b) => a.year <=> b.year) %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.year }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">Ничего не найдено</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('book_add', {'author_id': author.id}) }}" class="btn btn-outline-primary"> + Добавить книгу</a>
+
+{% endblock %}
